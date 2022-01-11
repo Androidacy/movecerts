@@ -1,37 +1,8 @@
-<h1 align="center">Magisk Module Template Extended (MMT-Ex)</h1>
+## Move Certificates
+### By Androidacy
 
-<div align="center">
-  <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-v1.8-blue.svg?longCache=true&style=popout-square"
-      alt="Version" />
-  <!-- Last Updated -->
-    <img src="https://img.shields.io/badge/Updated-November 21, 2021-green.svg?longCache=true&style=flat-square"
-      alt="_time_stamp_" />
-  <!-- Min Magisk -->
-    <img src="https://img.shields.io/badge/MinMagisk-20.4-red.svg?longCache=true&style=flat-square"
-      alt="_time_stamp_" /></div>
+<sub>Please note, this module is neither devloped nor sponsored, approved, or otheriwse endorsed by the original authors of the [original Move Certificates module](https://github.com/Magisk-Modules-Repo/movecert)</sub>
 
-<div align="center">
-  <strong>MMT Extended is the spiritual successor of Unity and makes magisk module creation easy. More details in the 
-    <a href="https://github.com/Zackptg5/MMT-Extended/wiki">wiki</a>.
-</div>
+This module serves a very simple purpose: to move user certificates to the system store automagically, thereby removing the pesky "Network may be monitored" warning and allowing some apps that do not trust user certificates to trust the installed certificate. This is useful for Adguard or Wireshark users, which both need to install an user certificate to filter HTTPS certificates.
 
-<div align="center">
-  <h3>
-    <a href="https://github.com/Zackptg5/MMT-Extended">
-      Source Code
-    </a>
-    <span> | </span>
-    <a href="https://github.com/Zackptg5/MMT-Extended-Addons">
-      Addons Repository
-    </a>
-    <span> | </span>
-    <a href="https://forum.xda-developers.com/apps/magisk/magisk-module-template-extended-mmt-ex-t4029819">
-      XDA
-    </a>
-  </h3>
-</div>
-
-### Usage
-- [Follow the directions here (DO NOT FORK)](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-- Then follow instructions in [Wiki](https://github.com/Zackptg5/MMT-Extended/wiki)
+We chose to mkae this because the maker of the original module seems to have abandoned development, and it non longer works with modern versions of Magisk.

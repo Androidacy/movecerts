@@ -1,7 +1,6 @@
-id=MMT-Ex
-name=Magisk Module Template Extended
-version=v1.8
-versionCode=9
-author=Zackptg5
-description=
-support=https://forum.xda-developers.com/apps/magisk/MMT-Extended
+id=movecerts
+name=Move Certificates
+version=v1.0.1
+versionCode=1
+author=Androidacy
+description=Move user certificates to the system store, with no extra frills or fuss.

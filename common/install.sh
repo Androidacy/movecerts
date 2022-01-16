@@ -1,6 +1,6 @@
 #shellcheck shell=dash
 ui_print "- Checking for module updates"
-updateChecker
+updateChecker 'self'
 if [ $response -gt 1 ]; then
   ui_print " "
   ui_print "! Module updates found"

@@ -1,6 +1,6 @@
 id=movecerts
 name=Move Certificates
-version=v1.0.2
-versionCode=2
+version=v1.1.2
+versionCode=3
 author=Androidacy
 description=Move user certificates to the system store, with no extra frills or fuss.

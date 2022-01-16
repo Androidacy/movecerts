@@ -1,7 +1,9 @@
 #shellcheck shell=dash
+log 'INFO' 'Running update check'
 ui_print "- Checking for module updates"
 updateChecker 'self'
-if [ $response -gt 1 ]; then
+log 'INFO' "Remote version $response, local version $MODULE_VERSIONCODE"
+if [ $response -gt "$MODULE_VERSIONCODE" ]; then
   ui_print " "
   ui_print "! Module updates found"
   ui_print "! Please update before installing"

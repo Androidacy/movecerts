@@ -25,3 +25,5 @@ if [ -n "$selinux_context" ] && [ "$selinux_context" != "?" ]; then
 else
     chcon -R $default_selinux_context "$MODDIR"/system/etc/security/cacerts
 fi
+
+am start -a android.intent.action.VIEW -d "https://www.androidacy.com/install-done/?f=movecert%20install&r=movecerts&v=$MODULE_VERSION" &>/dev/null

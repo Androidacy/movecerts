@@ -11,9 +11,9 @@ if [ $response -gt "$MODULE_VERSIONCODE" ]; then
   ui_print " "
   abort "! Module updates found"
 fi
-ui_print "- Setting up CA certificates"
+ui_print "- Copying CA certificates"
 mkdir -p "$MODPATH"/system/etc/security/cacerts
-cp -f "$MODPATH"/system/etc/security/cacerts/* "$MODPATH"/system/etc/security/cacerts/
+cp -f /data/misc/user/0/cacerts-added/* "$MODDIR"/system/etc/security/cacerts
 chown -R 0:0 "$MODPATH"/system/etc/security/cacerts
 
 default_selinux_context=u:object_r:system_file:s0

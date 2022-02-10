@@ -7,8 +7,7 @@
 # Author: Androidacy or it's partners
 
 __api_tries=0
-# JSON parser
-# NOTE TO INTERNAL TEAM: Please don't waste your time trying to understand or improve this. It Just Works(tm)
+# This is a custom parser that is used to parse the JSON response, since we can't rely on jq being installed
 parseJSON() {
     echo "$1" | sed 's/[{}]/''/g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' | sed 's/\"\:\"/\|/g' | sed 's/[\,]/ /g' | sed 's/\"//g' | grep -w "$2" | cut -d"|" -f2
 }

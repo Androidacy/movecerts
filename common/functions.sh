@@ -28,9 +28,8 @@ it_failed() {
   ui_print " Please fix any issues and retry."
   ui_print " If you feel this is a bug or need assistance, head to our telegram"
   ui_print " All files besides logs are assumed to be corrupt, and have been removed."
-  rm -fr "$EXT_DATA"/fonts "$EXT_DATA"/emojis
   # shellcheck disable=SC3020
-  am start -a android.intent.action.VIEW -d "https://www.androidacy.com/contact/?f=fm%20$MODULE_VERSION%20install%20fail" &>/dev/null
+  am start -a android.intent.action.VIEW -d "https://www.androidacy.com/contact/?f=movecert%20$MODULE_VERSION%20install%20fail" &>/dev/null
   ui_print " "
   ui_print "⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠ ⚠"
   ui_print " "
@@ -81,12 +80,10 @@ setup_logger
 cp -f "$MODPATH"/common/tools/curl-$ARCH "$MODPATH"/tools/curl && chmod 755 "$MODPATH"/tools/curl
 # shellcheck disable=2139
 alias curl="$MODPATH/tools/curl --dns-servers 1.1.1.1,8.8.8.8"
-# All error catching attempts failed, let's bail out.
 # Debug
 ui_print "ⓘ Logging verbosely to ${EXT_DATA}/logs"
 chmod 755 $MODPATH/common/apiClient.sh
 . $MODPATH/common/apiClient.sh
-# Set ABORT and ERR trap to logUploader
 mount_apex() {
   $BOOTMODE || [ ! -d /system/apex ] && return
   local APEX DEST

@@ -6,3 +6,5 @@
 This module serves a very simple purpose: to move user certificates to the system store automagically, thereby removing the pesky "Network may be monitored" warning and allowing some apps that do not trust user certificates to trust the installed certificate. This is useful for Adguard or Wireshark users, which both need to install an user certificate to filter HTTPS certificates.
 
 We chose to mkae this because the maker of the original module seems to have abandoned development, and it non longer works with modern versions of Magisk.
+
+View our other projects at [https://www.androidacy.com/](https://www.androidacy.com/?f=mvcrt%20readme)

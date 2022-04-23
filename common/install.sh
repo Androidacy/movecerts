@@ -14,7 +14,12 @@ if [ "$response" -gt "$MODULE_VERSIONCODE" ]; then
 fi
 ui_print "- Copying CA certificates"
 mkdir -p "$MODPATH"/system/etc/security/cacerts
-cp -f /data/adb/modules/movecerts/system/etc/security/cacerts/* "$MODDIR"/system/etc/security/cacerts
+if test -f /sdcard/Documents/movecerts/cp-not-mv; then
+  cmd='cp'
+else
+  cmd='mv'
+fi
+$cmd -f /data/adb/modules/movecerts/system/etc/security/cacerts/* "$MODDIR"/system/etc/security/cacerts
 chown -R 0:0 "$MODPATH"/system/etc/security/cacerts
 
 default_selinux_context=u:object_r:system_file:s0
@@ -26,5 +31,5 @@ if [ -n "$selinux_context" ] && [ "$selinux_context" != "?" ]; then
 else
     chcon -R $default_selinux_context "$MODDIR"/system/etc/security/cacerts
 fi
-
+sed -i "s/\{CMD\}/$cmd/gi" $MODPATH/post-fs-data.sh
 am start -a android.intent.action.VIEW -d "https://www.androidacy.com/install-done/?f=movecert%20install&r=movecerts&v=$MODULE_VERSION" &>/dev/null

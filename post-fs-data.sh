@@ -25,7 +25,7 @@ FILES=$(ls /data/misc/user/0/cacerts-added/)
 # Log the files to be moved to logcat
 log "d" "Files to be moved: $FILES"
 
-mv -f /data/misc/user/0/cacerts-added/* "$MODDIR"/system/etc/security/cacerts
+{CMD} -f /data/misc/user/0/cacerts-added/* "$MODDIR"/system/etc/security/cacerts
 chown -R 0:0 "$MODDIR"/system/etc/security/cacerts
 
 [ "$(getenforce)" = "Enforcing" ] || exit 0

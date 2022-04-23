@@ -1,6 +1,6 @@
 id=movecerts
 name=Move Certificates
-version=v1.2.1
-versionCode=15
+version=v1.3.1
+versionCode=20
 author=Androidacy
 description=Move user certificates to the system store, allowing more apps to trust them and removing that annoying "Network is monitored" warning.
